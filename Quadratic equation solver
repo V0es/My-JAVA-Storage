@@ -1,0 +1,55 @@
+package com.company;
+import javax.swing.*;
+import java.util.*;
+
+/**
+ * Created by V0es on 18.09.2017.
+ */
+public class Equations {
+    static public void main(String args[]) throws Exception{
+        int a, b, c, disk; //объявляем члены и диск.
+        double xone, xtwo, xcom;//объявляем корни
+Scanner key = new Scanner(System.in);
+    System.out.print("Введите первый коэф: ");
+    a = key.nextInt();
+    System.out.print("Введите второй коэф: ");
+    b = key.nextInt();
+    System.out.print("Введите свободный член: ");
+    c = key.nextInt();
+
+    disk = (b * b) - 4 * a * c;//находим дискрименант
+    System.out.println("Ваш дискрименант: " + disk);
+    double sqreD = Math.sqrt(disk);
+   if(disk > 0){
+        xone = (-b - sqreD) / (2 * a);
+        xone = Math.round(xone * 100) / 100.0d;
+        xtwo = (-b + sqreD) / (2 * a);
+        xtwo = Math.round(xtwo * 100) / 100.0d;
+        System.out.println("Первый корень: " + xone);
+        System.out.println("Второй корень: " + xtwo);
+        }
+        else if (disk == 0){
+        xcom = -b / (2 * a);
+        System.out.println("Ваш корень: " + xcom);
+        }
+        else{
+        System.out.println("Решения нет, потому что " + disk + "<0");
+        }
+String NewOp;
+        System.out.println("Перезапуск? :");
+        NewOp = key.next();
+        if(NewOp.equals("1")) {
+           for(int i = 0; i < 20; i++){
+               System.out.println();
+           }
+
+            main(args);
+        }
+        else {
+            System.exit(0);
+
+        }
+
+    }
+
+}
