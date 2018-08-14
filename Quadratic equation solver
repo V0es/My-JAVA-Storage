@@ -7,36 +7,36 @@ import java.util.*;
  */
 public class Equations {
     static public void main(String args[]) throws Exception{
-        int a, b, c, disk; //объявляем члены и диск.
-        double xone, xtwo, xcom;//объявляем корни
+        int a, b, c, disk; //declare discriminant and coefficients
+        double xone, xtwo, xcom;//declare roots
 Scanner key = new Scanner(System.in);
-    System.out.print("Введите первый коэф: ");
+    System.out.print("Enter quadratic coefficientf: ");
     a = key.nextInt();
-    System.out.print("Введите второй коэф: ");
+    System.out.print("Enter linear coefficient: ");
     b = key.nextInt();
-    System.out.print("Введите свободный член: ");
+    System.out.print("Enter free term: ");
     c = key.nextInt();
 
-    disk = (b * b) - 4 * a * c;//находим дискрименант
-    System.out.println("Ваш дискрименант: " + disk);
+    disk = (b * b) - 4 * a * c;//find a discriminant
+    System.out.println("Your discriminant: " + disk);
     double sqreD = Math.sqrt(disk);
    if(disk > 0){
         xone = (-b - sqreD) / (2 * a);
         xone = Math.round(xone * 100) / 100.0d;
         xtwo = (-b + sqreD) / (2 * a);
         xtwo = Math.round(xtwo * 100) / 100.0d;
-        System.out.println("Первый корень: " + xone);
-        System.out.println("Второй корень: " + xtwo);
+        System.out.println("First root: " + xone);
+        System.out.println("Second root: " + xtwo);
         }
         else if (disk == 0){
         xcom = -b / (2 * a);
-        System.out.println("Ваш корень: " + xcom);
+        System.out.println("Your root: " + xcom);
         }
         else{
-        System.out.println("Решения нет, потому что " + disk + "<0");
+        System.out.println("Unable to solve, because " + disk + "<0");
         }
 String NewOp;
-        System.out.println("Перезапуск? :");
+        System.out.println("Type 1 if you want to restart :");
         NewOp = key.next();
         if(NewOp.equals("1")) {
            for(int i = 0; i < 20; i++){
