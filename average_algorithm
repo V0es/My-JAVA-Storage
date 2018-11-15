@@ -1,0 +1,28 @@
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.util.Scanner;
+import java.util.stream.IntStream;
+
+/**
+ * Created by V0es on 14.11.2018.
+ */
+public class Test {
+    public static void main(String args[]){
+        double ave;
+        NumberFormat nf = new DecimalFormat("#.###");//объявляем формат выходного ззначения
+        int i = 0;
+    int numofArr;
+        Scanner arr = new Scanner(System.in);
+        System.out.println("Введите количество чисел \n");//вводим количество элементов массива
+        numofArr = arr.nextInt();
+        int[] array = new int[numofArr];
+        for( int a=0; a<numofArr; a++){ //цикл для ввода каждого элемента массива
+           System.out.println("Введите " + ++i + "-ое число");
+            array[a] = arr.nextInt();
+        }
+       ave = IntStream.of(array).average().getAsDouble();                     //вывод отформатированного значения
+        System.out.println(nf.format(ave));              //если число целое, то выводит без нулей в дробной часли
+                                                //если число рациональное, то выводит дробную часть без искажений
+    }
+}
+                
